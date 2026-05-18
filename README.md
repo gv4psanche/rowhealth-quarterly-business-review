@@ -1,9 +1,9 @@
 <!-- ![RowHealth Logo](images/RowHealth_Logo_Small.png) -->
 <div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Medium.png" width="150" alt="bits&bytes logo" /></a></div>
 
-# <div align="center">Quarterly Business Review</div>
+# <div align="center">Patient Campaign and Claims Analysis (QBR)</div>
 
-<div align="center">A structured analysis of sales trends, growth rates, loyalty program ROI, and refunds/returns</div>
+<div align="center">A marketing analysis of patient campaign and claims</div>
 
 <div align="center"><b>Period:</b> 2019 – 2022 &nbsp;|&nbsp; <b>Team:</b> Data Analytics &nbsp;|&nbsp; <b>Updated:</b> Apr 2023 &nbsp;|&nbsp; <b>Tools:</b> Excel/Power BI</div>
 
