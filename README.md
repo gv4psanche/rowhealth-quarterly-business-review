@@ -1,4 +1,4 @@
-![RowHealth Logo](images/RowHealth_Logo_50x50.fw.png) 
+![RowHealth Logo](images/RowHealth_Logo_Small.png) 
 # Q3 FY23 Quarterly Business Review #
 
 ** Quick Overview **
