@@ -1,4 +1,6 @@
-![RowHealth Logo](images/RowHealth_Logo_Small.png) 
+<!-- ![RowHealth Logo](images/RowHealth_Logo_Small.png) -->
+<div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Small.png" width="100" alt="bits&bytes logo" /></a></div>
+
 # Q3 FY23 Quarterly Business Review #
 
 ** Quick Overview **
