@@ -1,7 +1,7 @@
 <!-- ![RowHealth Logo](images/RowHealth_Logo_Small.png) -->
 <div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Medium.png" width="150" alt="bits&bytes logo" /></a></div>
 
-# <div align="center">Patient Campaign and Claims Analysis (QBR)</div>
+# <div align="center">Member Choice Plan and Claims Analysis (QBR)</div>
 
 <div align="center">A marketing analysis of patient campaign and claims</div>
 
