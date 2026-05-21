@@ -64,11 +64,10 @@ On the claims side, RowHealth has processed nearly 50,000 claims totaling over $
 After their successful 2019 marketing campaign launch, the company has generated over data comprising 9 million impressions and more than 850,000 clicks. The Marketing team is strategizing their marketing budget for the year and would like to build better understanding of the effectiveness of these campaign categories and how they relate to signups and subsequent patient claims. The data team has been asked to build visualizations to enable the marketing team to self-serve insights and regular-cadence reporting:
  
 #### Northstar Metrics
-* **Sales trends** - Focusing on key metrics of sales revenue, number of orders placed, and average order value (AOV).
-* **Product performance** - Analyzing different product lines, market impact, and refund rates to inform strategic product decisions.
-* **Loyalty program evaluation** - Evaluating the effectiveness of the company's loyalty program and providing recommendations to maximize customer engagement and retention.
-* **Regional results** - Evaluating regional demand and product performance within regions to identify areas for improvement.
-
+* **Customer Acquisition Cost (CAC)** - Measures the total cost of acquiring a new member, helping to assess the efficiency of marketing campaigns.
+* **Member Retention Rate** - Indicates the percentage of members who renew their policies, reflecting customer satisfaction and loyalty.
+* **Claims Processing Time** - Tracks the average time taken to process claims, which is crucial for member satisfaction and operational efficiency.
+* **Net Promoter Score (NPS)** - Gauges member satisfaction and likelihood to recommend the insurance provider, influencing both retention and acquisition.
 
 ### Assumptions  <img src="images/icon_assumptions_small.png" alt="icon assumptions" width="30px" />
 * **Backdated Analysis** - This analysis reporting assumes that the present year is 2023 and the data for review is from the prior 4 years of 2019-2022.
