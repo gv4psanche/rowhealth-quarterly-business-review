@@ -50,7 +50,7 @@ Since 2019, RowHealth has invested heavily in data-driven marketing to expand it
 On the claims side, RowHealth has processed nearly 50,000 claims totaling over $13 million in billed services, covering approximately 61% of those costs for members. The breadth of covered services — from glucose monitoring and physical therapy to mental health counseling and radiation therapy — underscores RowHealth's commitment to comprehensive, whole-person care. As the company continues to scale, it remains focused on delivering plan flexibility, proactive health engagement, and meaningful coverage to its growing member base.
 
 ### Operational Data <img src="images/icon_data_small.png" alt="icon data" width="30px" />
-**RowHealth’s** current book of business encompasses nearly **16,000 members** and more than **50,000 claims**, yielding a total billed services exceeding **$13M USD**. The accompanying eCommerce dataset provides comprehensive data across multiple dimensions, including product performance, regional sales distribution, and loyalty program engagement.  
+**RowHealth’s** current book of business encompasses nearly **16,000 members** and more than **50,000 claims**, yielding a total billed services exceeding **$13M USD**. The accompanying Patient Member dataset provides comprehensive data across multiple dimensions, including patient member information, claims transactions, and campaign program engagement.  
 
 <div align="center">
  <img src="images/rowhealth_ERD_diagram.png" width="450" alt="rowhealth logo" /><br>
@@ -61,7 +61,7 @@ On the claims side, RowHealth has processed nearly 50,000 claims totaling over $
 **Note:** <img src="images/icon_assumptions_small.png" alt="icon assumptions" width="20px" /> "*add work here*" dataset. See [EDA process](/doc/RH_EDA.pdf) on how the dataset was cleaned and prepared for this analysis.
 
  ### The Ask <img src="images/icon_request_small.png" alt="icon requirements" width="30px" />
-After their successful 2019 marketing campaign launch, the company has generated over data comprising 9 million impressions and more than 850,000 clicks. The Marketing team is strategizing their marketing budget for the year and would like to build more understanding of the effectiveness of these campaign categories and how they relate to signups and subsequent patient claims. The data team has been asked to build visualizations to enable the marketing team to self-serve insights and regular-cadence reporting:
+After their successful 2019 marketing campaign launch, the company has generated over data comprising 9 million impressions and more than 850,000 clicks. The Marketing team is strategizing their marketing budget for the year and would like to build better understanding of the effectiveness of these campaign categories and how they relate to signups and subsequent patient claims. The data team has been asked to build visualizations to enable the marketing team to self-serve insights and regular-cadence reporting:
  
 #### Northstar Metrics
 * **Sales trends** - Focusing on key metrics of sales revenue, number of orders placed, and average order value (AOV).
