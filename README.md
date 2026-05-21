@@ -73,7 +73,7 @@ After their successful 2019 marketing campaign launch, the company has generated
 
 ### Assumptions  <img src="images/icon_assumptions_small.png" alt="icon assumptions" width="30px" />
 * **Backdated Analysis** - This analysis reporting assumes that the present year is 2023 and the data for review is from the prior 4 years of 2019-2022.
-* **A Proxy CAC** - Only "cost per customer acquired by campaign" and not a true company-wide CAC can be calculate given only "cost per campaign" data is available .
+* **A 'Proxy' Campaign-level CAC** - Only spend per campaign and not a true company-wide CAC can be calculate given only "cost per campaign" data is available .
 * **3rd Assumption** - add more here.
 
 [Back to Member Care Plan and Claims Analysis](#member-care-plan-and-claims-analysis-qbr)
