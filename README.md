@@ -65,6 +65,7 @@ After their successful 2019 marketing campaign launch, the company has generated
  
 #### Northstar Metrics
 * **Customer Acquisition Cost (CAC)** - Measures the total cost of acquiring a new member, helping to assess the efficiency of marketing campaigns.
+* **Campaign Conversion Rate** - Clicks → actual signups. Knowing which campaign categories (e.g., Compare Health Coverage vs. Affordable Plans) drive the most enrollments justifies budget allocation.
 * **Member Retention Rate** - Indicates the percentage of members who renew their policies, reflecting customer satisfaction and loyalty.
 * **Claims Processing Time** - Tracks the average time taken to process claims, which is crucial for member satisfaction and operational efficiency.
 * **Net Promoter Score (NPS)** - Gauges member satisfaction and likelihood to recommend the insurance provider, influencing both retention and acquisition.
@@ -74,7 +75,7 @@ After their successful 2019 marketing campaign launch, the company has generated
 * **Rough Data** - The dataset is assumed to have been pulled together from older system app sources which explains the "not so clean" state.
 * **Missing Returns/Refund Data** - The hypothetical cause for the missing returns data for the period Q1-Q3 2023 was due to a major systems issue that resulted in the non-capture of returns transactions.
 
-[Back to Sales Performance Review](#sales-performance-review)
+[Back to Member Care Plan and Claims Analysis](#member-care-plan-and-claims-analysis-qbr)
 
 ---
 
