@@ -1,11 +1,11 @@
 <!-- ![RowHealth Logo](images/RowHealth_Logo_Small.png) -->
 <div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Medium.png" width="150" alt="bits&bytes logo" /></a></div>
 
-# <div align="center">Member Care Plan and Claims Analysis (QBR)</div>
+# <div align="center">Marketing Insights and Recommendation (QBR)</div>
 
-<div align="center">A marketing analysis of patient care plans and claims performance</div>
+<div align="center">Campaign and Claims Performance</div>
 
-<div align="center"><b>Period:</b> 2019 – 2023 &nbsp;|&nbsp; <b>Team:</b> Data Analytics &nbsp;|&nbsp; <b>Updated:</b> September 2023 &nbsp;|&nbsp; <b>Tools:</b> Excel/Power BI</div>
+<div align="center"><b>Period:</b> 2019 – 2023 &nbsp;|&nbsp; <b>Team:</b> Data Analytics &nbsp;|&nbsp; <b>Updated:</b> September 2023 &nbsp;|&nbsp; <b>Tools:</b> Excel/Power BI &nbsp;|&nbsp; <a href="#about-the-project">Project Overview</a></div>
 
 ---
 
