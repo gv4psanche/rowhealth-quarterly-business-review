@@ -1,7 +1,7 @@
 <!-- ![RowHealth Logo](images/RowHealth_Logo_Small.png) -->
 <div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Medium.png" width="150" alt="bits&bytes logo" /></a></div>
 
-# <div align="center">Marketing Insights and Recommendation (QBR)</div>
+# <div align="center">Marketing Insights and Recommendation</div>
 
 <div align="center">Campaign and Claims Performance</div>
 
@@ -13,7 +13,7 @@
 
 RowHealth is a Houston, TX-based private medical insurance company founded in 2016. This project analyzes three years of customer, campaign, and claims data (2019–2023) to surface Northstar Metrics for two distinct stakeholder audiences — **Marketing Leadership** and **Finance** — and delivers them through an interactive analytics dashboard mockup.
 
-The dataset spans **16,338 members**, **49,998 claims**, and **57 marketing campaigns** across 12 campaign categories, with member enrollment in four plan tiers: Bronze, Silver, Gold, and Platinum.
+The dataset spans **16,000 members**, **50,000 claims**, **$13M claims billed**, and **57 marketing campaigns** across 12 campaign categories, with member enrollment in four plan tiers: Bronze, Silver, Gold, and Platinum.
 
 Now that they’ve hired a new data team and are strategizing their marketing budget for the year, the company would like to build more understanding of the effectiveness of these campaign categories and how they relate to signups and subsequent patient claims. **As a data analyst at Row Health, your focus is on building visualizations** to enable the marketing team to self-serve insights and regular-cadence reporting.
 
@@ -86,7 +86,7 @@ The Power BI mockup is structured across three views:
 - No premium/revenue data is available in the dataset; true loss ratio and LTV calculations are not possible without it.
 - Signup dates span 2019–2023, with 2023 figures representing a partial year.
 
-*Bits&Bytes Commerce Inc. · Revenue Analytics · Confidential &nbsp;|&nbsp; `sales-performance-review · v1.2.0`*
+*RowHealth Insurance Co. Marketing Analytics · Confidential &nbsp;|&nbsp; `marketing-performance-review · v1.2.0`*
 
 <br />
 
@@ -119,7 +119,7 @@ After their successful 2019 marketing campaign launch, the company has generated
 * **3rd Assumption** - add more here.
 
 ### Operational Data <img src="images/icon_data_small.png" alt="icon data" width="30px" />
-**RowHealth’s** current book of business encompasses nearly **16,000 members** and more than **50,000 claims**, yielding a total billed services exceeding **$13M USD**. The accompanying Patient Member dataset provides comprehensive data across multiple dimensions, including patient member information, claims transactions, and campaign program engagement.  
+**RowHealth’s** current book of business encompasses nearly **16,338 members** and more than **49,998 claims**, yielding a total billed services exceeding **$13M USD**. The accompanying Patient Member dataset provides comprehensive data across multiple dimensions, including patient member information, claims transactions, and campaign program engagement.  
 
 <div align="center">
  <img src="images/rowhealth_ERD_diagram.png" width="450" alt="rowhealth logo" /><br>
