@@ -130,7 +130,7 @@ After their successful 2019 marketing campaign launch, the company has generated
 * **3rd Assumption** - add more here.
 
 ### Operational Data <img src="images/icon_data_small.png" alt="icon data" width="30px" />
-**RowHealth’s** current book of business encompasses nearly **16,338 members** and more than **49,998 claims**, yielding a total billed services exceeding **$13M USD**. The accompanying Patient Member dataset provides comprehensive data across multiple dimensions, including patient member information, claims transactions, and campaign program engagement.  
+**RowHealth’s** current book of business encompasses nearly **16,338 members** and more than **49,998 claims**, yielding a total billed services exceeding **$13.4M USD**. The accompanying Patient Member dataset provides comprehensive data across multiple dimensions, including patient member information, claims transactions, and campaign program engagement.  
 
 <div align="center">
  <img src="images/rowhealth_ERD_diagram.png" width="450" alt="rowhealth logo" /><br>
@@ -144,7 +144,7 @@ After their successful 2019 marketing campaign launch, the company has generated
 <br>
 <div align="center">
 
-[Back to Sales Performance Review](#marketing-insights-and-recommendation-qbr)
+[Back to top](#marketing-insights-and-recommendation-qbr)
 
 </div>
 <br>
