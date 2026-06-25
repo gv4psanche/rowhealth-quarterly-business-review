@@ -78,6 +78,8 @@ The Power BI mockup is structured across three views:
 2. **Finance** — coverage ratio by plan tier, claims per member, claim category concentration, and channel-level loss ratio
 3. **Bridging metric** — bubble chart overlays showing CAC vs. coverage ratio and claims-per-member vs. coverage ratio across plan tiers and channels
 
+<a href="https://gv4psanche.github.io/rowhealth-quarterly-business-review/">Click To Live Dashboard</a>
+
 ---
 
 ## Data Notes
