@@ -74,11 +74,20 @@ In 2019, RowHealth launched a new set of marketing campaign categories covering 
 
 The Power BI mockup is structured across three views:
 
-1. **Marketing Leadership** — member growth trend, channel mix, plan enrollment distribution, proxy CAC ranking, and CTR by campaign category
-2. **Finance** — coverage ratio by plan tier, claims per member, claim category concentration, and channel-level loss ratio
-3. **Bridging metric** — bubble chart overlays showing CAC vs. coverage ratio and claims-per-member vs. coverage ratio across plan tiers and channels
+1. **Marketing Leadership** — member growth trend, channel mix, plan enrollment distribution, proxy CAC ranking, and CTR by campaign category <table><tr><td><img src="images/RowHealth_Dash_Mkt_Leadershp.png" width="100%"></tr></table>
+<br>
+<br>
 
-<a href="https://gv4psanche.github.io/rowhealth-quarterly-business-review/">Click To Live Dashboard</a>
+2. **Finance** — coverage ratio by plan tier, claims per member, claim category concentration, and channel-level loss ratio <table><tr><td><img src="images/RowHealth_Dash_Finance.png" width="100%"></td></tr></table>
+<br>
+<br>
+
+3. **Bridging metric** — bubble chart overlays showing CAC vs. coverage ratio and claims-per-member vs. coverage ratio across plan tiers and channels <table><tr><td><img src="images/RowHealth_Dash_Bridging_Metric.png" width="100%"></td></tr></table>
+<br>
+
+<div align="center"><a href="https://gv4psanche.github.io/rowhealth-quarterly-business-review/">Click To Live Dashboard</a></div>
+<br>
+<br>
 
 ---
 
