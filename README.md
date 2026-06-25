@@ -68,6 +68,9 @@ In 2019, RowHealth launched a new set of marketing campaign categories covering 
 **Bridging metric — Loss ratio by acquisition channel**
 > A campaign that brings in high-claim members at low CAC is not a win. The bridging metric connects marketing's cost efficiency directly to finance's coverage exposure, enabling cross-functional budget decisions.
 
+<br>
+<br>
+
 ---
 
 ## Dashboard
