@@ -1,0 +1,424 @@
+
+<style>
+  .dash { font-family: var(--font-sans); padding: 1rem 0; }
+  .tab-bar { display: flex; gap: 8px; margin-bottom: 1.5rem; border-bottom: 0.5px solid var(--border); padding-bottom: 0; }
+  .tab { padding: 8px 18px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s; }
+  .tab.active { color: #1D9E75; border-bottom-color: #1D9E75; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .kpi { background: var(--surface-1); border-radius: var(--radius); padding: 14px 16px; }
+  .kpi-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .kpi-value { font-size: 22px; font-weight: 500; color: var(--text-primary); line-height: 1; }
+  .kpi-sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+  .kpi-good { color: #0F6E56; }
+  .kpi-warn { color: #BA7517; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .chart-card { background: var(--surface-1); border-radius: 12px; padding: 16px; }
+  .chart-title { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; font-size: 11px; color: var(--text-secondary); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+  .notice { font-size: 11px; color: var(--text-muted); margin-top: 8px; padding: 6px 10px; background: var(--bg-warning); border-radius: var(--radius); border-left: 3px solid #EF9F27; }
+  @media (max-width: 520px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+</style>
+
+<div class="dash">
+  <div style="margin-bottom: 1rem; display: flex; align-items: center;">
+    <!--span style="font-size: 11px; font-weight: 500; background: #E1F5EE; color: #0F6E56; padding: 3px 10px; border-radius: 20px;">RowHealth</span-->
+    <span><img src="RowHealth_Logo_Medium.png" width="80"></span>
+    <span style="font-size: 24px; color: var(--text-muted); margin-left: 18px;">Marketing Analytics Dashboard · 2019–2023</span>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab active" onclick="switchTab('marketing')">Marketing leadership</button>
+    <button class="tab" onclick="switchTab('finance')">Finance</button>
+    <button class="tab" onclick="switchTab('bridge')">Bridging metric</button>
+  </div>
+
+  <!-- MARKETING TAB -->
+  <div class="section active" id="tab-marketing">
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">Total members</div>
+        <div class="kpi-value">16,338</div>
+        <div class="kpi-sub">2019–2023</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Top acquisition</div>
+        <div class="kpi-value" style="font-size:17px;">Social</div>
+        <div class="kpi-sub">58% of signups</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total impressions</div>
+        <div class="kpi-value">9.1M</div>
+        <div class="kpi-sub">Across 57 campaigns</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Avg CTR</div>
+        <div class="kpi-value">9.4%</div>
+        <div class="kpi-sub">Clicks / impressions</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total spend</div>
+        <div class="kpi-value">$60.2K</div>
+        <div class="kpi-sub">Campaign budget</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="chart-title">Member growth by year</div>
+        <div style="position:relative;height:180px;"><canvas id="growthChart" role="img" aria-label="Member signups by year 2019-2023">2019: 2465, 2020: 5154, 2021: 4931, 2022: 2923, 2023: 865</canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">First-touch channel mix</div>
+        <div class="legend">
+          <span><span class="legend-dot" style="background:#2a78d6"></span>Social 58%</span>
+          <span><span class="legend-dot" style="background:#1baf7a"></span>Referral 34%</span>
+          <span><span class="legend-dot" style="background:#eda100"></span>Marketplace 5%</span>
+          <span><span class="legend-dot" style="background:#888780"></span>Other 3%</span>
+        </div>
+        <div style="position:relative;height:150px;"><canvas id="channelChart" role="img" aria-label="Channel mix: social 58%, referral 34%, marketplace 5%, other 3%">Social 9484, Referral 5557, Marketplace 880, Direct 380, Email 37</canvas></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="chart-title">Proxy CAC by campaign category ($)</div>
+        <div class="notice">Partial data — campaigns with known spend + matched customer IDs only</div>
+        <div style="position:relative;height:320px;margin-top:10px;"><canvas id="cacChart" role="img" aria-label="Proxy CAC by campaign category in dollars">#CoverageMatters $0.65, Health For All $1.23, #HealthyLiving $1.79, Compare Health Coverage $3.56, Tailored Health Plans $4.67, Preventive Care News $9.73, Family Coverage Plan $13.08, #InsureYourHealth $20.80, Affordable Plans $24.91, Summer Wellness Tips $43.47, Benefit Updates $47.81, Golden Years Security $176.73</canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Plan enrollment distribution</div>
+        <div class="legend">
+          <span><span class="legend-dot" style="background:#2a78d6"></span>Silver 85.7%</span>
+          <span><span class="legend-dot" style="background:#1baf7a"></span>Gold 10.6%</span>
+          <span><span class="legend-dot" style="background:#eda100"></span>Bronze 3.6%</span>
+          <span><span class="legend-dot" style="background:#4a3aa7"></span>Platinum 0.1%</span>
+        </div>
+        <div style="position:relative;height:200px;"><canvas id="planChart" role="img" aria-label="Plan enrollment: silver 85.7%, gold 10.6%, bronze 3.6%, platinum 0.1%">Silver 14010, Gold 1725, Bronze 591, Platinum 12</canvas></div>
+        <div style="margin-top:12px; padding: 10px; background:var(--bg-warning); border-radius:var(--radius); border-left:3px solid #EF9F27;">
+          <span style="font-size:11px; color:var(--text-secondary);">Only <strong>12 platinum members</strong> — potential gap between product offering and campaign messaging.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">CTR vs spend by campaign category</div>
+      <div style="position:relative;height:220px;"><canvas id="ctrChart" role="img" aria-label="CTR percentage by campaign category">Health For All 25.5%, Benefit Updates 22.2%, Summer Wellness Tips 18.1%, Compare Health Coverage 14%, Preventive Care News 12.2%, Affordable Plans 12.7%, #CoverageMatters 10.4%, #InsureYourHealth 7.7%, Tailored Health Plans 6.6%, #HealthyLiving 9.6%, Golden Years Security 1.4%, Family Coverage Plan 0%</canvas></div>
+    </div>
+  </div>
+
+  <!-- FINANCE TAB -->
+  <div class="section" id="tab-finance">
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">Total claims billed</div>
+        <div class="kpi-value">$13.4M</div>
+        <div class="kpi-sub">49,998 claims</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total covered</div>
+        <div class="kpi-value">$8.2M</div>
+        <div class="kpi-sub">Paid out</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Coverage ratio</div>
+        <div class="kpi-value kpi-good">61.2%</div>
+        <div class="kpi-sub">Covered / billed</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Avg claim value</div>
+        <div class="kpi-value">$267</div>
+        <div class="kpi-sub">Per claim</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Top claim category</div>
+        <div class="kpi-value" style="font-size:14px;">Glucose monitoring</div>
+        <div class="kpi-sub kpi-warn">41.7% of all claims</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="chart-title">Coverage ratio by plan tier (%)</div>
+        <div style="position:relative;height:200px;"><canvas id="planCovChart" role="img" aria-label="Coverage ratio by plan: bronze 50.2%, silver 60.1%, gold 69.8%, platinum 80%">Bronze 50.2%, Silver 60.1%, Gold 69.8%, Platinum 80%</canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Claims per member by plan tier</div>
+        <div style="position:relative;height:200px;"><canvas id="claimsPerMemberChart" role="img" aria-label="Claims per member: bronze 1.63, silver 3.08, gold 3.37, platinum 3.25">Bronze 1.63, Silver 3.08, Gold 3.37, Platinum 3.25</canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom:16px;">
+      <div class="chart-title">Claim category concentration — total billed ($)</div>
+      <div class="notice" style="margin-bottom:10px;">Glucose monitoring alone = 38.8% of total billed. Heavy single-category concentration is a key financial risk.</div>
+      <div style="position:relative;height:280px;"><canvas id="claimCatChart" role="img" aria-label="Claims by category in dollars">Glucose Monitoring $5.2M, Dialysis Treatment $3.0M, Radiation Therapy $2.1M, Parenteral Nutrition $1.8M, Mental Health $288K, Oxygen Therapy $228K, Physical Therapy $214K</canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Coverage ratio by acquisition channel (%)</div>
+      <div style="position:relative;height:180px;"><canvas id="channelCovChart" role="img" aria-label="Coverage ratio by channel: direct 60.3%, email 59.8%, marketplace 61.8%, referral 60.7%, social 61.3%">Direct 60.3%, Email 59.8%, Marketplace 61.8%, Referral 60.7%, Social 61.3%</canvas></div>
+    </div>
+  </div>
+
+  <!-- BRIDGE TAB -->
+  <div class="section" id="tab-bridge">
+    <div style="padding: 12px 0 20px; border-bottom: 0.5px solid var(--border); margin-bottom: 20px;">
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.6; max-width:600px;">
+        The bridging metric connects marketing's job (acquiring members) to finance's concern (what those members cost). A low-CAC campaign that brings in high-claim members is not a win.
+      </div>
+    </div>
+
+    <div class="kpi-row" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="kpi">
+        <div class="kpi-label">Most efficient campaign</div>
+        <div class="kpi-value" style="font-size:15px;">#CoverageMatters</div>
+        <div class="kpi-sub kpi-good">$0.65 CAC</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Least efficient campaign</div>
+        <div class="kpi-value" style="font-size:15px;">Golden Years Security</div>
+        <div class="kpi-sub kpi-warn">$176.73 CAC</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Channel coverage variance</div>
+        <div class="kpi-value">2.0pp</div>
+        <div class="kpi-sub">59.8% email → 61.8% marketplace</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-card">
+        <div class="chart-title">Proxy CAC vs coverage ratio by channel</div>
+        <div style="position:relative;height:220px;"><canvas id="bridgeScatter" role="img" aria-label="CAC versus coverage ratio by acquisition channel">Social CAC low coverage 61.3%, Referral medium CAC 60.7%, Marketplace higher CAC 61.8%</canvas></div>
+        <div class="notice" style="margin-top:10px;">Channel-level CAC is estimated from campaign spend proportional to social/referral ratios — directional only.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Claims per member vs coverage ratio by plan</div>
+        <div style="position:relative;height:220px;"><canvas id="planScatter" role="img" aria-label="Claims per member versus coverage ratio by plan tier">Bronze 1.63 claims 50.2% coverage, Silver 3.08 claims 60.1%, Gold 3.37 claims 69.8%, Platinum 3.25 claims 80%</canvas></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">CAC efficiency ranking — cost per member acquired</div>
+      <div style="position:relative;height:280px;"><canvas id="cacRankChart" role="img" aria-label="CAC ranking for all campaign categories">#CoverageMatters $0.65 through Golden Years Security $176.73</canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)';
+const labelColor = isDark ? '#898781' : '#888780';
+const textColor = isDark ? '#ffffff' : '#0b0b0b';
+const teal = '#1D9E75';
+const blue = '#2a78d6';
+const amber = '#eda100';
+const violet = '#4a3aa7';
+const red = '#e34948';
+const gray = '#888780';
+
+const baseOpts = {
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: {} } },
+  scales: {
+    x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 } } },
+    y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 } } }
+  }
+};
+
+new Chart(document.getElementById('growthChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023'],
+    datasets: [{ data: [2465,5154,4931,2923,865], backgroundColor: teal, borderRadius: 4 }]
+  },
+  options: { ...baseOpts, scales: { x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 } } }, y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => v.toLocaleString() } } } }
+});
+
+new Chart(document.getElementById('channelChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Social','Referral','Marketplace','Direct','Email'],
+    datasets: [{ data: [9484,5557,880,380,37], backgroundColor: [blue,'#1baf7a',amber,violet,gray], borderWidth: 2, borderColor: isDark ? '#1a1a19' : '#fcfcfb' }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '65%', plugins: { legend: { display: false } } }
+});
+
+const cacLabels = ['#CoverageMatters','Health For All','#HealthyLiving','Compare Coverage','Tailored Plans','Preventive Care','Family Coverage','#InsureYourHealth','Affordable Plans','Summer Wellness','Benefit Updates','Golden Years'];
+const cacData = [0.65,1.23,1.79,3.56,4.67,9.73,13.08,20.80,24.91,43.47,47.81,176.73];
+const cacColors = cacData.map(v => v < 5 ? teal : v < 20 ? amber : red);
+new Chart(document.getElementById('cacChart'), {
+  type: 'bar',
+  data: { labels: cacLabels, datasets: [{ data: cacData, backgroundColor: cacColors, borderRadius: 4 }] },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toFixed(2) + ' per member' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => '$' + v } },
+      y: { grid: { color: 'transparent' }, ticks: { color: labelColor, font: { size: 10 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('planChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Silver','Gold','Bronze','Platinum'],
+    datasets: [{ data: [14010,1725,591,12], backgroundColor: [blue,'#1baf7a',amber,violet], borderWidth: 2, borderColor: isDark ? '#1a1a19' : '#fcfcfb' }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '60%', plugins: { legend: { display: false } } }
+});
+
+const ctrLabels = ['Health For All','Benefit Updates','Summer Wellness','Compare Coverage','Affordable Plans','#CoverageMatters','Preventive Care','#InsureYourHealth','#HealthyLiving','Tailored Plans','Golden Years'];
+const ctrData = [25.48,22.17,18.09,14.04,12.70,10.43,12.24,7.68,9.62,6.62,1.41];
+new Chart(document.getElementById('ctrChart'), {
+  type: 'bar',
+  data: { labels: ctrLabels, datasets: [{ data: ctrData, backgroundColor: blue, borderRadius: 4 }] },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toFixed(1) + '% CTR' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 10 }, maxRotation: 35, autoSkip: false } },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => v + '%' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('planCovChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Bronze','Silver','Gold','Platinum'],
+    datasets: [{ data: [50.2,60.1,69.8,80.0], backgroundColor: [red, amber, teal, blue], borderRadius: 4 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toFixed(1) + '%' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor } },
+      y: { grid: { color: gridColor }, min: 0, max: 100, ticks: { color: labelColor, callback: v => v + '%' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('claimsPerMemberChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Bronze','Silver','Gold','Platinum'],
+    datasets: [{ data: [1.63,3.08,3.37,3.25], backgroundColor: [red, amber, teal, blue], borderRadius: 4 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toFixed(2) + ' claims/member' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor } },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor } }
+    }
+  }
+});
+
+new Chart(document.getElementById('claimCatChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Glucose Monitoring','Dialysis Treatment','Radiation Therapy','Parenteral Nutrition','Mental Health','Oxygen Therapy','Physical Therapy'],
+    datasets: [{ data: [5189440,3012583,2131171,1765369,287919,227964,213764], backgroundColor: [red, amber, amber, amber, blue, blue, blue], borderRadius: 4 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + (ctx.raw/1000000).toFixed(2) + 'M' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => '$' + (v/1000000).toFixed(1) + 'M' } },
+      y: { grid: { color: 'transparent' }, ticks: { color: labelColor, font: { size: 11 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('channelCovChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Direct','Email','Marketplace','Referral','Social'],
+    datasets: [{ data: [60.3,59.8,61.8,60.7,61.3], backgroundColor: [gray, gray, teal, blue, blue], borderRadius: 4 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toFixed(1) + '%' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor } },
+      y: { grid: { color: gridColor }, min: 55, max: 65, ticks: { color: labelColor, callback: v => v + '%' } }
+    }
+  }
+});
+
+new Chart(document.getElementById('bridgeScatter'), {
+  type: 'bubble',
+  data: {
+    datasets: [
+      { label: 'Social', data: [{ x: 61.3, y: 2.1, r: 18 }], backgroundColor: blue + 'cc' },
+      { label: 'Referral', data: [{ x: 60.7, y: 3.8, r: 12 }], backgroundColor: teal + 'cc' },
+      { label: 'Marketplace', data: [{ x: 61.8, y: 6.8, r: 7 }], backgroundColor: amber + 'cc' },
+      { label: 'Direct', data: [{ x: 60.3, y: 5.2, r: 4 }], backgroundColor: violet + 'cc' },
+      { label: 'Email', data: [{ x: 59.8, y: 8.5, r: 2 }], backgroundColor: gray + 'cc' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { color: labelColor, font: { size: 11 }, boxWidth: 10 } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.x + '% coverage' } }
+    },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, callback: v => v + '%' }, title: { display: true, text: 'Coverage ratio', color: labelColor, font: { size: 11 } }, min: 58, max: 64 },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor }, title: { display: true, text: 'Est. relative CAC', color: labelColor, font: { size: 11 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('planScatter'), {
+  type: 'bubble',
+  data: {
+    datasets: [
+      { label: 'Bronze', data: [{ x: 50.2, y: 1.63, r: 8 }], backgroundColor: red + 'cc' },
+      { label: 'Silver', data: [{ x: 60.1, y: 3.08, r: 18 }], backgroundColor: amber + 'cc' },
+      { label: 'Gold', data: [{ x: 69.8, y: 3.37, r: 12 }], backgroundColor: teal + 'cc' },
+      { label: 'Platinum', data: [{ x: 80.0, y: 3.25, r: 4 }], backgroundColor: blue + 'cc' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { color: labelColor, font: { size: 11 }, boxWidth: 10 } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.x + '% cov, ' + ctx.parsed.y + ' claims/member' } }
+    },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, callback: v => v + '%' }, title: { display: true, text: 'Coverage ratio', color: labelColor, font: { size: 11 } }, min: 40, max: 90 },
+      y: { grid: { color: gridColor }, ticks: { color: labelColor }, title: { display: true, text: 'Claims per member', color: labelColor, font: { size: 11 } }, min: 0, max: 5 }
+    }
+  }
+});
+
+new Chart(document.getElementById('cacRankChart'), {
+  type: 'bar',
+  data: {
+    labels: ['#CoverageMatters','Health For All','#HealthyLiving','Compare Coverage','Tailored Plans','Preventive Care','Family Coverage','#InsureYourHealth','Affordable Plans','Summer Wellness','Benefit Updates','Golden Years'],
+    datasets: [{ data: [0.65,1.23,1.79,3.56,4.67,9.73,13.08,20.80,24.91,43.47,47.81,176.73], backgroundColor: cacData.map(v => v < 5 ? teal : v < 20 ? amber : red), borderRadius: 4 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toFixed(2) + ' CAC' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: labelColor, font: { size: 11 }, callback: v => '$' + v }, type: 'logarithmic' },
+      y: { grid: { color: 'transparent' }, ticks: { color: labelColor, font: { size: 10 } } }
+    }
+  }
+});
+</script>
