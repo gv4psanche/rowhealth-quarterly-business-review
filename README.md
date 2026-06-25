@@ -9,29 +9,82 @@
 
 ---
 
+## Overview
 
-**Quick Overview**
+RowHealth is a Houston, TX-based private medical insurance company founded in 2016. This project analyzes three years of customer, campaign, and claims data (2019–2023) to surface Northstar Metrics for two distinct stakeholder audiences — **Marketing Leadership** and **Finance** — and delivers them through an interactive analytics dashboard mockup.
 
-**Founded in 2016, Row Health is a medical insurance company serving thousands of customers throughout the United States**. **In 2019, they launched a new set of marketing campaign categories** spanning topics like wellness tips, the affordability of their plans, and preventative care. Their customers can sign up for 4 different plans - bronze, silver, gold, and platinum - each with different premiums and claim coverage rates. 
+The dataset spans **16,338 members**, **49,998 claims**, and **57 marketing campaigns** across 12 campaign categories, with member enrollment in four plan tiers: Bronze, Silver, Gold, and Platinum.
 
 Now that they’ve hired a new data team and are strategizing their marketing budget for the year, the company would like to build more understanding of the effectiveness of these campaign categories and how they relate to signups and subsequent patient claims. **As a data analyst at Row Health, your focus is on building visualizations** to enable the marketing team to self-serve insights and regular-cadence reporting.
 
-# Visuals #
-** Visuals Placeholder **
+---
 
-# Insights #
-** Insights Placeholder **
- - insight #1
- - insight #2
- - insight #3
+## Business Context
 
-# Recommendations #
-** Recommendation Placeholder **
-  - recommendation #1
-  - recommendation #2
-  - recommendation #3
+In 2019, RowHealth launched a new set of marketing campaign categories covering wellness tips, plan affordability, and preventive care. The core analytical questions driving this project were:
 
+- Which campaigns most efficiently acquire new members?
+- Are higher-tier plan members more or less profitable after claims?
+- Where are the financial concentration risks in the claims portfolio?
+- Can a single bridging metric connect marketing performance to financial outcomes?
 
+---
+
+## Northstar Metrics
+
+### Marketing Leadership
+| Metric | Value |
+|---|---|
+| Total members acquired | 16,338 |
+| Top acquisition channel | Social (58%) |
+| Total campaign impressions | 9.1M |
+| Average CTR across campaigns | 9.4% |
+| Best proxy CAC | $0.65 — #CoverageMatters |
+| Worst proxy CAC | $176.73 — Golden Years Security |
+
+### Finance
+| Metric | Value |
+|---|---|
+| Total claims billed | $13.4M |
+| Total claims covered | $8.2M |
+| Overall coverage ratio | 61.2% |
+| Highest-risk claim category | Glucose Monitoring (41.7% of all claims) |
+| Coverage ratio range by plan | Bronze 50.2% → Platinum 80.0% |
+
+---
+
+## Key Findings
+
+**Marketing**
+- Social and referral channels account for 92% of all member signups, yet campaign spend is spread broadly — several low-volume categories carry CAC above $40.
+- Only 12 Platinum members exist across the entire member base, suggesting a gap between product offering and campaign messaging for premium plans.
+- `Health For All` and `Benefit Updates` achieve the highest CTR (25.5% and 22.2%) despite relatively modest impressions, indicating strong message-market fit.
+
+**Finance**
+- Glucose Monitoring alone represents 41.7% of claims by count and 38.8% of total billed dollars — a single-category concentration risk.
+- Bronze plan members file the fewest claims per member (1.63) yet receive the worst coverage ratio (50.2%), a potential pricing or retention risk.
+- Coverage ratio is nearly identical across all acquisition channels (59.8%–61.8%), meaning channel mix does not materially affect claims liability.
+
+**Bridging metric — Loss ratio by acquisition channel**
+> A campaign that brings in high-claim members at low CAC is not a win. The bridging metric connects marketing's cost efficiency directly to finance's coverage exposure, enabling cross-functional budget decisions.
+
+---
+
+## Dashboard
+
+The Power BI mockup is structured across three views:
+
+1. **Marketing Leadership** — member growth trend, channel mix, plan enrollment distribution, proxy CAC ranking, and CTR by campaign category
+2. **Finance** — coverage ratio by plan tier, claims per member, claim category concentration, and channel-level loss ratio
+3. **Bridging metric** — bubble chart overlays showing CAC vs. coverage ratio and claims-per-member vs. coverage ratio across plan tiers and channels
+
+---
+
+## Data Notes
+
+- CAC is a **proxy only** — derived from campaigns with known spend and matched customer IDs. Campaigns with null spend or unattributed signups (`unknown` campaign ID) are excluded.
+- No premium/revenue data is available in the dataset; true loss ratio and LTV calculations are not possible without it.
+- Signup dates span 2019–2023, with 2023 figures representing a partial year.
 
 *Bits&Bytes Commerce Inc. · Revenue Analytics · Confidential &nbsp;|&nbsp; `sales-performance-review · v1.2.0`*
 
