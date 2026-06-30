@@ -1,9 +1,13 @@
-![RowHealth Logo](images/RowHealth_Logo_Small.png)
+<div align="center"><a href="#about-the-project"><img src="images/RowHealth_Logo_Medium.png" width="150" alt="bits&bytes logo" /></a></div>
 
-# RowHealth Quarterly Business Review
-## Marketing Insights & Campaign Performance Analysis
+# <div align="center">RowHealth Quarterly Business Review</div>
+## <div align="center">Marketing Insights & Campaign Performance Analysis</div>
 
+<div align="center">
+  
 ![Status](https://img.shields.io/badge/Status-Complete-green) ![Period](https://img.shields.io/badge/Period-2019--2023-blue) ![Tools](https://img.shields.io/badge/Tools-Excel%20%2F%20Power%20BI%20%2F%20Python-blueviolet)
+
+</div>
 
 ---
 
@@ -43,6 +47,22 @@ We created an **Acquisition Channel Scorecard** that calculates loss ratio per c
 *This table shows channel profitability in a single view—previously impossible.*
 
 ---
+
+## Dashboard
+
+The Power BI mockup is structured across three views:
+
+1. **Marketing Leadership** — member growth trend, channel mix, plan enrollment distribution, proxy CAC ranking, and CTR by campaign category <table><tr><td><img src="images/RowHealth_Dash_Mkt_Leadershp.png" width="100%"></tr></table>
+<br>
+
+2. **Finance** — coverage ratio by plan tier, claims per member, claim category concentration, and channel-level loss ratio <table><tr><td><img src="images/RowHealth_Dash_Finance.png" width="100%"></td></tr></table>
+<br>
+
+3. **Bridging metric** — bubble chart overlays showing CAC vs. coverage ratio and claims-per-member vs. coverage ratio across plan tiers and channels <table><tr><td><img src="images/RowHealth_Dash_Bridging_Metric.png" width="100%"></td></tr></table>
+<br>
+
+<div align="center"><a href="https://gv4psanche.github.io/rowhealth-quarterly-business-review/">Click To Live Dashboard</a></div>
+<br>
 
 ## Key Findings
 
@@ -168,4 +188,4 @@ image.png
 
 ---
 
-![RowHealth Logo](images/RowHealth_Logo_Small.png)
+*RowHealth Insurance Co. Marketing Analytics · Confidential &nbsp;|&nbsp; `marketing-performance-review · v1.2.0`*
